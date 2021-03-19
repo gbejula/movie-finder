@@ -8,7 +8,7 @@ function App() {
       <h1 className='title'>React Movie Search</h1>
       <SearchMovies />
       <div>
-        <a href='!#' className='gotopbtn'>
+        <a href='#' className='gotopbtn'>
           <i class='fas fa-arrow-up'></i>
         </a>
       </div>
