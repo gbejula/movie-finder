@@ -5,7 +5,7 @@ const SearchMovies = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
-  const searchMovies = async (event) => {
+  const searchMovies = async event => {
     event.preventDefault();
     console.log('submitting...');
 
@@ -21,6 +21,13 @@ const SearchMovies = () => {
     }
   };
 
+  // const handleError = () => {
+  //   if (e.target.value === '') {
+
+  //   } else {
+  //   }
+  // };
+
   return (
     <>
       <form className='form' onSubmit={searchMovies}>
@@ -33,19 +40,28 @@ const SearchMovies = () => {
           name='query'
           placeholder='i.e. Avengers'
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={event => setQuery(event.target.value)}
         />
-        <button className='button' type='submit'>
+        <button
+          className='button'
+          type='submit'
+          onClick={event => {
+            if (event.target.value === '') {
+              // const display = 'Please enter movie title';
+            } else {
+            }
+          }}>
           Search
         </button>
       </form>
       <div className='card--list'>
         {movies
-          .filter((movie) => movie.poster_path)
-          .map((movie) => (
+          .filter(movie => movie.poster_path)
+          .map(movie => (
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
+      ;
     </>
   );
 };
