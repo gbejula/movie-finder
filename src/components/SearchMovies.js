@@ -49,6 +49,7 @@ const SearchMovies = () => {
             if (event.target.value === '') {
               // const display = 'Please enter movie title';
             } else {
+              <h3>Search is empty. Please enter move name.</h3>;
             }
           }}>
           Search
